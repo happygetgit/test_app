@@ -24,4 +24,4 @@ Things you may want to cover:
 - ...
 
 login:
-Implementation without devise gem
+Implementation with bycrpt gem
