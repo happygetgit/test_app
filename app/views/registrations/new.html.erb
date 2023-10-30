@@ -1,0 +1,52 @@
+<% if flash[:notice] %>
+  <%= content_tag :h1, flash[:notice] %>
+<% else %>
+  <%= content_tag :h1, 'Please login' %>
+<% end %>
+
+<h1> Registration Form </h1>
+
+<table>
+<%= form_with model: @users, url: registrations_path, scope: :user, data: {turbo: false} do |f| %>
+  <tr>
+    <td><%= f.label :first_name %></td>
+    <td><%= f.text_field :first_name %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :last_name %></td>
+    <td><%= f.text_field :last_name %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :username %></td>
+    <td><%= f.text_field :username  %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :phone %></td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :password %></td>
+    <td><%= f.text_field :password %></td>
+  </tr>
+  
+  <tr>
+    <td><%= f.label :confirm_password %></td>
+    <td><%= f.text_field :confirm_password %></td>
+  </tr>
+  
+  <tr>
+    <td><%= f.submit 'SignUp' %></td>
+  </tr>
+
+<% end %>
+
+</table>
